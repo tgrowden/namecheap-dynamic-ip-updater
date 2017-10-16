@@ -1,0 +1,62 @@
+{
+  "name": "namecheap-dynamic-ip-updater",
+  "version": "0.0.2",
+  "description": "A script to update the dynamic IP address of a host for a NameCheap domain name",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tgrowden/namecheap-dynamic-ip-updater.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tgrowden/namecheap-dynamic-ip-updater/issues"
+  },
+  "homepage": "https://github.com/tgrowden/namecheap-dynamic-ip-updater#readme",
+  "scripts": {
+    "start": "node -r dotenv/config dist/index.js",
+    "test": "jest",
+    "test:no-cache": "jest --no-cache",
+    "test:coverage": "jest --no-cache --coverage",
+    "test:coverage:view": "npm run test:coverage && opn './coverage/lcov-report/index.html'",
+    "lint": "eslint .",
+    "format": "prettier-eslint \"src/**/*.js\" --write",
+    "build": "webpack",
+    "dev": "npm run build && npm start",
+    "precommit": "npm test && npm run lint",
+    "prepublisn": "npm run build"
+  },
+  "keywords": [
+    "namecheap",
+    "dynamic dns",
+    "dns",
+    "ip",
+    "domain"
+  ],
+  "author": "Taylor Growden <taylor.growden@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "eslint": "^4.7.2",
+    "husky": "^0.14.3",
+    "jest": "^21.2.0",
+    "moxios": "^0.4.0",
+    "opn-cli": "^3.1.0",
+    "prettier-eslint-cli": "^4.3.2",
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "dotenv": "^4.0.0",
+    "external-ip": "^1.3.1",
+    "query-string": "^5.0.0",
+    "supports-color": "^4.4.0",
+    "util": "^0.10.3",
+    "xml-js": "^1.4.2"
+  }
+}

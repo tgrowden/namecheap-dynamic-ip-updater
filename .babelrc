@@ -1,0 +1,16 @@
+{
+    "env": {
+        "development": {
+            "presets": ["stage-3"]
+        },
+        "production": {
+            "presets": ["stage-3"]
+        },
+        "test": {
+            "presets": [
+                ["env", { "modules": "commonjs" }],
+                "stage-3"
+            ]
+        }
+    }
+}
